@@ -1,0 +1,12 @@
+package com.jpa.service;
+
+import org.springframework.stereotype.Service;
+
+import com.jpa.repository.Author1Repository;
+
+@Service
+public class Bookstoreservice {
+
+	private final Author1Repository
+	
+}

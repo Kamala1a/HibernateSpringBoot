@@ -1,0 +1,15 @@
+package com.jpa;
+
+import com.jpa.dto.AuthorDto;
+import com.jpa.repository.AuthorRepository;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookStoreService {
+
+	@Autowired
+	private final AuthorRepository authorRepository;
+}

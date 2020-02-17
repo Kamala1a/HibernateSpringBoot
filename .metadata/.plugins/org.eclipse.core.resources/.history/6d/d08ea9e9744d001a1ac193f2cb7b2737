@@ -1,0 +1,13 @@
+package com.jpa.service;
+
+import org.springframework.data.jpa.domain.Specification;
+
+public class AuthorSpecs {
+
+	private static final int AGE = 45;
+	
+	public static Specification<Author> isAgeGt45() {
+		
+	}
+	
+}

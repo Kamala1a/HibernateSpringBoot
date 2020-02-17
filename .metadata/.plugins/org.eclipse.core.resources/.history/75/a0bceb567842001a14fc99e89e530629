@@ -1,0 +1,22 @@
+package com.jpa.repository;
+
+import com.jpa.dto.AuthorDto;
+import com.jpa.entity.Author;
+import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional(readOnly = true)
+public interface AuthorRepository extends JpaRepository<Author, Long>{
+
+	List<AuthorDto> fetchWithSeqNumber1();
+	
+	List<AuthorDto> fetchWithSeqNumber2();
+	
+	List<AuthorDto> fetchWithSeqNumber3();
+	
+	List<AuthorDto> fetchWithSeqNumber4();
+}

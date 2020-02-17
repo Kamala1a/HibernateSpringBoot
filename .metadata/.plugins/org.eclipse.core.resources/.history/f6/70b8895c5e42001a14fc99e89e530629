@@ -1,0 +1,10 @@
+package spilteratorExample;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class InterfaceSpliterator3 {
+	public static void main(String args[]) {
+		List<String> progList = Arrays.asList("Java","C","C++","Python","javascript");
+	}
+}

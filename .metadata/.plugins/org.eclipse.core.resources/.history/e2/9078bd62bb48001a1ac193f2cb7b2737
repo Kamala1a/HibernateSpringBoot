@@ -1,0 +1,18 @@
+package threading;
+
+public class IsAliveExample extends Thread{
+
+	public void run() {
+		try {
+			Thread.sleep(300);
+			System.out.println("is run() method isAlive: " + Thread.currentThread().isAlive());
+		} catch(InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public static void main(String args[]) {
+		IsAliveExample t1 = IsAliveExample();
+	}
+	
+}

@@ -1,0 +1,15 @@
+package threading;
+
+public class ThreadTwice extends Thread	{
+
+	public static void main(String args[]) {
+		
+		ThreadTwice t1 = new ThreadTwice();
+		t1.run();
+		t1.start();
+		
+	}
+	
+	
+	
+}

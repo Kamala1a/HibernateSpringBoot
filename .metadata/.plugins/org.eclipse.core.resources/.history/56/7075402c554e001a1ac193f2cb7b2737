@@ -1,0 +1,26 @@
+package com.jpa;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class Book1 implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	
+	@Id
+	private long id;
+	
+	private String title;
+	
+	private String isbn;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Author1 author;
+	
+}

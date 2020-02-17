@@ -1,0 +1,23 @@
+package com.jpa.repository.impl;
+
+import java.util.Objects;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public abstract class SlicePagingRepositoryImplementation {
+
+	private static final String NULL_ENTITY = "Entity Cannot be NULL";
+	
+	@Autowired
+	private EntityManager entityManager;
+	
+	protected SlicePagingRepositoryImplementation(Class<T> entityClass) {
+		Objects.requireNonNull(entityClass, NULL_ENTITY);
+		
+	}
+	
+}

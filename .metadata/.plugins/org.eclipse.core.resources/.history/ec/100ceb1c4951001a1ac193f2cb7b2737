@@ -1,0 +1,22 @@
+package com.jpa.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.jpa.repository.AuthorRepository;
+import com.jpa.service.BookStoreService;
+
+@RestController
+public class AuthorController {
+	
+	@Autowired
+	BookStoreService bookStoreService;
+
+	@GetMapping("/fetchAuthors")
+	public String fetchAuthors() {
+		bookStoreService.fetchAuthors();
+		return "index";
+	}
+	
+}

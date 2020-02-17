@@ -1,0 +1,7 @@
+package com.jpa;
+
+import java.io.Serializable;
+
+public class Book1 implements Serializable{
+
+}

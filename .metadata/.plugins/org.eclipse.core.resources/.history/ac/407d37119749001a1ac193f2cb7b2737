@@ -1,0 +1,16 @@
+package ArrayListExamples;
+
+import java.util.ArrayList;
+
+public class ArrayList1 {
+
+	public static void main(String args[]) {
+		ArrayList ages = new ArrayList();
+		ages.add("1");
+		ages.add(2);
+		ages.add(new Long(3L));
+		ages.add(new String("4"));
+		System.out.println(ages);
+	}
+	
+}

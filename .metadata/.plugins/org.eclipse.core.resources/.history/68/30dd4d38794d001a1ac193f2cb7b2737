@@ -1,0 +1,43 @@
+package com.jpa.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.jpa.entity.Author;
+import com.jpa.repository.AuthorRepository;
+
+import static com.jpa.service.AuthorSpecs.isAgeGt45;
+
+import java.util.Objects;
+
+import javax.persistence.LockModeType;
+
+@Service
+public class BookStoreService {
+
+	private final String NULL_ENTITY = "Entity cannot be null";
+    private final String NULL_PAGEABLE = "Pageable cannot be null";
+    private final String NULL_SPECIFICATION = "Specification cannot be null";
+    private final String NULL_LOCK_MODE = "Lock mode cannot be null";
+    private final String NULL_QUERY_HINTS = "Query hints cannot be null";
+    private final String NULL_QUERY = "CriteriaQuery cannot be null";
+    
+	@Autowired
+	private AuthorRepository authorRepository;
+	
+	private final Class<T> entityClass;
+	
+	public Slice<T> findAll(Pageable pageable) {
+		Objects.requireNonNull(pageable, NULL_PAGEABLE);
+		
+	}
+	
+	public Slice<Author> fetchNextSlice(int page, int size) {
+		return authorRepository.findAll(isAgeGt45(), PageRequest.of(page, size, Sort.by(Sort.Direction.ASC, "age")),
+				LockModeType.OPTIMISTIC_FORCE_INCREMENT, lmt, hints)
+	}
+}

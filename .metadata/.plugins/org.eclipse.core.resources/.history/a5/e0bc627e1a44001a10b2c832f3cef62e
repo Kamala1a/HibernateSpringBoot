@@ -1,0 +1,39 @@
+package com.jpa;
+
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import com.jpa.service.BookStoreService;
+import com.jpa.service.Bookstore1service;
+
+
+@SpringBootApplication
+public class HibernateSpringBootAssignSequentialNumberApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(HibernateSpringBootAssignSequentialNumberApplication.class, args);
+	}
+	
+	private final BookStoreService bookStoreService;
+	
+	private final Bookstore1service bookStore1Service;
+
+	public HibernateSpringBootAssignSequentialNumberApplication(BookStoreService bookStoreService, Bookstore1service bookstore1service) {
+		super();	
+		this.bookStoreService = bookStoreService;
+		this.bookStore1Service = bookstore1service;
+	}
+	
+	@Bean
+	public ApplicationRunner init() {
+		return args -> {
+			/*
+			System.out.println("\n\nUsing ORDER BY only in OVER:");
+			bookStoreService.fetchWithSeqNumber1();
+			*/
+			bookStore1service.insertAuthor();
+		};
+	}
+}

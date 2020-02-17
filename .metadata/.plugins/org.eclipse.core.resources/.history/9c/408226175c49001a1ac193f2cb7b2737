@@ -1,0 +1,27 @@
+package excelExample;
+
+import java.sql.*;
+import java.io.*;
+
+public class SimpleCsv2DbInserter {
+	
+	public static void main(String args[]) {
+		
+		String jdbcURL = "jdbc:mysql://localhost:3306/testdb";
+		String username = "root";
+		String password = "root";
+		
+		String csvFilePath = "Reviews-simple.csv";
+		int batchSize = 20;
+		
+		Connection connection = null;
+		
+		try {
+			
+		} catch(IOException ex) {
+			System.err.println(ex);
+		}
+		
+	}
+	
+}

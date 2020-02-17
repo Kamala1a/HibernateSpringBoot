@@ -1,0 +1,32 @@
+package threading;
+
+public class SuspendExample extends Thread{
+
+	public void run() {
+		if(Thread.currentThread().getName().equals("second")) {
+			System.out.println("will be suspended after 5 seconds");
+			Thread.currentThread().suspend();
+		}
+		for(int i = 1; i < 5; i++) {
+			try {
+				sleep(500);
+				System.out.println(Thread.currentThread().getName() + "    " + i);
+			} catch(InterruptedException ex) {
+				System.out.println(ex);
+			}
+		}
+	}
+	
+	public static void main(String args[]) {
+		SuspendExample t1 = new SuspendExample();
+		SuspendExample t2 = new SuspendExample();
+		SuspendExample t3 = new SuspendExample();
+		t1.setName("first");t2.setName("second");t3.setName("third");
+		t1.start();
+		t2.start();
+		//t2.suspend();
+		
+		t3.start();
+	}
+	
+}

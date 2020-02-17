@@ -1,0 +1,16 @@
+package streamExample;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StreamPerformance1 {
+	
+	static List<Integer> myList = new ArrayList<Integer>();
+	
+	public static void main(String args[]) {
+		
+		
+		
+	}
+	
+}

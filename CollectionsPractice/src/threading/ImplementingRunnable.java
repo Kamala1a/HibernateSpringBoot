@@ -1,0 +1,16 @@
+package threading;
+
+public class ImplementingRunnable implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("Thread is Running....");
+	}
+	
+	public static void main(String args[]) {
+		ImplementingRunnable runnable1 = new ImplementingRunnable();
+		Thread t1 = new Thread(runnable1);
+		t1.start();
+	}
+
+}

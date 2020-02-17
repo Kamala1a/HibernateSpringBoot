@@ -1,0 +1,9 @@
+package streamExample;
+
+import java.io.Serializable;
+
+public class SerializationExample implements Serializable{
+
+	
+	
+}

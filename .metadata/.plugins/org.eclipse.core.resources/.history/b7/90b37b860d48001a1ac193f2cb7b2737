@@ -1,0 +1,19 @@
+package streamExample;
+
+import java.io.Serializable;
+
+class SerializationExample implements Serializable{
+
+	String name;
+	int id;
+	static String contact;
+	
+	SerializationExample(String name, int id, String contact) {
+		this.name = name;
+		this.id = id;
+		this.contact = contact;
+	}
+	
+}
+
+

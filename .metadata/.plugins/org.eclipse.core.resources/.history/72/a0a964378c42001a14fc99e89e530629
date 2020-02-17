@@ -1,0 +1,19 @@
+package ArrayListExamples;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class CreateArrayListFromCollectionExample {
+	public static void main(String args[]) {
+		List<Integer> firstFivePrimeMembers = new ArrayList<>(); 
+		firstFivePrimeMembers.add(2);
+		firstFivePrimeMembers.add(3);
+		firstFivePrimeMembers.add(5);
+		firstFivePrimeMembers.add(7);
+		firstFivePrimeMembers.add(11);
+		
+		List<Integer> firstTenPrimeMembers = new ArrayList<>(firstFivePrimeMembers);
+		
+		List<Integer> nextTenPrimeMembers = new ArrayList<>();
+	}
+}

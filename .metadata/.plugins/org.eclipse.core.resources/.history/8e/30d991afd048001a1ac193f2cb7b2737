@@ -1,0 +1,17 @@
+package threading;
+
+public class ThreadPool {
+
+}
+
+class WorkerThread implements Runnable {
+
+	private String message;
+	
+	
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName() + " (Start) " + message);
+	}
+	
+}

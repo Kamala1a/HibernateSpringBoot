@@ -1,0 +1,20 @@
+package spilteratorExample;
+
+import java.util.ArrayList;
+import java.util.Spliterator;
+import java.util.stream.Stream;
+
+public class InterfaceSpliterator {
+	public static void main(String args[]) {
+		ArrayList<Integer> list = new ArrayList<>();
+		list.add(101);
+		list.add(102);
+		list.add(103);
+		list.add(104);
+		list.add(105);
+		
+		Stream<Integer> str = list.stream();
+		
+		Spliterator<Integer> splitr = 
+	}
+}

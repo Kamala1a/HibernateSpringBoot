@@ -1,0 +1,44 @@
+package com.jpa.repository;
+
+import java.util.Objects;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional(readOnly = true)
+public abstract class SlicePagingRepositoryImplementation<T> {
+
+	public static final String NULL_ENTITY = "Entity Cannot be NULL";
+	public static final String NULL_PAGEABLE = "Pageable Cannot be NULL";
+	
+	@Autowired
+	private EntityManager entityManager;
+	
+	private final Class<T> entityClass;
+	
+	
+	public SlicePagingRepositoryImplementation(Class<T> entityClass) {
+		Objects.requireNonNull(entityClass, NULL_ENTITY);
+		this.entityClass = entityClass;
+	}
+	
+	public Slice<T> findAll(Pageable pageable) {
+		Objects.requireNonNull(pageable, NULL_PAGEABLE);
+		return findAll(pageable, entityClass);
+	}
+	
+	public Slice<T> findAll(Pageable pageable, Class<T> entityClass) {
+		final String sql = "SELECT e FROM " + entityClass.getSimpleName() + " e";
+		TypedQuery<T> query = entityManager.createQuery(sql,entityClass);
+		
+		return readSlice(query, pageable);
+	}
+	
+}

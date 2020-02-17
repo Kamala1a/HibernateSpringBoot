@@ -1,0 +1,10 @@
+package threading;
+
+public class TestDaemonThread2 extends Thread{
+
+	public static void main(String args[]) {
+		TestDaemonThread2 t1 = new TestDaemonThread2();
+		TestDaemonThread2 t1 = new TestDaemonThread2();
+	}
+	
+}

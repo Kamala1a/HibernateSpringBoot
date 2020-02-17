@@ -1,0 +1,38 @@
+package streamExample;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+class SerializationExample{
+
+	String name;
+	int id;
+	static String contact;
+	
+	SerializationExample(String name, int id, String contact) {
+		this.name = name;
+		this.id = id;
+		this.contact = contact;
+	}
+	
+}
+
+class SerializationTest {
+	
+	public static void main(String args[]) {
+		
+		try {
+			SerializationExample se1 = new SerializationExample("Abhi", 104, "110044");
+			FileOutputStream fos = new FileOutputStream("D:/student.ser");
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(se1);
+			oos.close();
+			fos.close();
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+		
+	}
+	
+}

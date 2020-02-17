@@ -1,0 +1,13 @@
+package streamExample;
+
+import java.io.Serializable;
+
+public class SerializationExample implements Serializable{
+
+	String name;
+	int id;
+	static String contact;
+	
+	
+	
+}

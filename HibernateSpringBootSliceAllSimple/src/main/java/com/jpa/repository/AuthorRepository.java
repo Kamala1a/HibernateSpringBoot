@@ -1,0 +1,14 @@
+package com.jpa.repository;
+
+import org.springframework.stereotype.Repository;
+
+import com.jpa.entity.Author;
+
+@Repository
+public class AuthorRepository extends SlicePagingRepositoryImplementation<Author>{
+
+	public AuthorRepository() {
+		super(Author.class);
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.jpa.dao;
+
+import java.io.Serializable;
+
+public class Dao<T, ID extends Serializable> implements GenericDao<T, ID>{
+
+	
+	
+	@Override
+	public <R extends T> void saveInBatch(Iterable<R> entities) {
+		
+	}
+
+}

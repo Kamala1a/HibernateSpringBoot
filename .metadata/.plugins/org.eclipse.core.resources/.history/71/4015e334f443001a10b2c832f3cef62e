@@ -1,0 +1,11 @@
+package threading;
+
+public class ThreadTwice extends Thread	{
+
+	public static void main(String args[]) {
+		
+		
+		
+	}
+	
+}

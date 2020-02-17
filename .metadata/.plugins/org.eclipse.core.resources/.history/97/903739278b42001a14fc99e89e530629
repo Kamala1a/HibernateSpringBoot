@@ -1,0 +1,21 @@
+package ArrayListExamples;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NullAndDuplicateValuesDemo {
+	
+	public static void main(String args[]) {
+			nullValueDemo();
+			duplicateValueDemo();
+	}
+		
+	private static void nullValueDemo() {
+		List<String> list = new ArrayList<String>
+	}
+	
+	private static void duplicateValueDemo() {
+		
+	}
+
+}

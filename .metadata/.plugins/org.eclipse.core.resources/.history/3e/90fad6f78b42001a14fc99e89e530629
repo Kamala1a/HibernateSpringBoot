@@ -1,0 +1,9 @@
+package ArrayListExamples;
+
+import java.util.List;
+
+public class CreateArrayListFromCollectionExample {
+	public static void main(String args[]) {
+		List<Integer> 
+	}
+}

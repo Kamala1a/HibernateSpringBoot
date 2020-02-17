@@ -1,0 +1,19 @@
+package com.jpa.dto;
+
+public class AuthorDto {
+
+	public String getName();
+	
+	public byte[] getAvatar();
+
+	public String getName() {
+		return name;
+	}
+
+	public byte[] getAvatar() {
+		return avatar;
+	}
+	
+	
+	
+}

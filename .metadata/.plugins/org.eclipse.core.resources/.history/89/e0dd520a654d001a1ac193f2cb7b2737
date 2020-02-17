@@ -1,0 +1,31 @@
+package com.jpa.repository.impl;
+
+import java.util.Objects;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional(readOnly = true)
+public abstract class SlicePagingRepositoryImplementation<T> {
+
+	public static final String NULL_ENTITY = "Entity Cannot be null";
+	public static final String NULL_PAGEABLE = "Pageable Cannot be null";
+	public static final String NULL_QUERY = "CriteriaQuery Cannot be null";
+	
+	@Autowired
+	private EntityManager entityManager;
+	
+	private final Class<T> entityClass;
+	
+	public SlicePagingRepositoryImplementation(final Class<T> entityClass) {
+		Objects.requireNonNull(entityClass, NULL_ENTITY);
+		this.entityClass = entityClass;
+	}
+	
+	
+	
+}

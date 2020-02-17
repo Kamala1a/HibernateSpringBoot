@@ -1,0 +1,35 @@
+package com.jpa.controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.jpa.dto.AuthorDto;
+import com.jpa.entity.Author1;
+import com.jpa.repository.AuthorRepository;
+
+@Controller
+public class BookStoreController {
+	
+	private final AuthorRepository authorRepository;
+
+	public BookStoreController(AuthorRepository authorRepository) {
+		super();
+		this.authorRepository = authorRepository;
+	}
+
+	@RequestMapping("/home")
+	public String rowNum1(Model model) {
+		model.addAttribute("results", authorRepository.fetchWithSeqNumber1());
+		return "rowNum1";
+	}
+	
+	@RequestMapping("/UUIDExample")
+	public String UUIExample(Model model) {
+		Author1 author1 = new Author1();
+		model.addAttribute("author1", author1);
+		return "author1";
+	}
+}

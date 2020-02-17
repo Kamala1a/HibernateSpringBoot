@@ -1,0 +1,5 @@
+package com.jpa.impl;
+
+public class BatchRepositoryImpl {
+
+}

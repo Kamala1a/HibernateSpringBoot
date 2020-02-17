@@ -1,0 +1,14 @@
+package com.jpa.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.jpa.service.BookStoreService;
+
+@Controller
+public class BookStoreController {
+
+	@Autowired
+	public BookStoreService bookStoreService;
+	
+}

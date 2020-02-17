@@ -1,0 +1,24 @@
+package com.jpa.dao;
+
+import java.io.Serializable;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class Dao<T, ID extends Serializable> implements GenericDao<T, ID>{
+
+	@Value("${spring.jpa.properties.hibernate.jdbc.batch_size}")
+	private int batchSize;
+	
+	@Override
+	public <R extends T> void saveInBatch(Iterable<R> entities) {
+		if(entities == null) {
+			throw new IllegalArgumentException();
+		}
+		int i = 0;
+		
+		for(S entity:entities) {
+			
+		}
+	}
+
+}

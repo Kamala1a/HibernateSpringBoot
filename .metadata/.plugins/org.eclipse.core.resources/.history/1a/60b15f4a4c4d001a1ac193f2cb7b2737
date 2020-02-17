@@ -1,0 +1,9 @@
+package threading;
+
+public class OverrideStartRun extends Thread{
+
+	public static void main(String args[]) {
+		OverrideStartRun t1 = new OverrideStartRun();
+	}
+	
+}

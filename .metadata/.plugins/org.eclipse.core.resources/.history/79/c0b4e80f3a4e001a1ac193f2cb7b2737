@@ -1,0 +1,43 @@
+package com.jpa.dao;
+
+import java.io.Serializable;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.hibernate.Session;
+import org.jboss.logging.Logger;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional
+public class Dao<T, ID extends Serializable> implements GenericDao<T, ID> {
+
+	private static final Logger LOGGER = Logger.getLogger(Dao.class.getName());
+	
+	@Value("${spring.jpa.properties.hibernate.jdbc.batch_size}")
+	private static int BATCH_SIZE;
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	@Override
+	public <S extends T> void saveInBatch(Iterable<S> entities) {
+		if(entities == null) {
+			throw new IllegalArgumentException("The given Iterable of entities cannot be null!");
+		}
+		
+		int i = 0;
+		
+		Session session = entityManager.unwrap(Session.class);
+		session.setJdbcBatchSize(BATCH_SIZE);
+		
+		for(S entity: entities) {
+			entityManager.persist(entity);
+		}
+
+	}
+
+}

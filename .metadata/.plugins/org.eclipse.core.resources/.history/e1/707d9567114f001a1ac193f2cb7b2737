@@ -1,0 +1,21 @@
+package com.jpa.n1.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jpa.n1.entity.Book;
+import com.jpa.n1.repository.BookRepositoryFetchModeJoin;
+
+@Service
+public class BookstoreService {
+
+	@Autowired
+	BookRepositoryFetchModeJoin bookRepositoryFetchModeJoin;
+	
+	public void displayBooksCausingNPlus1() {
+		List<Book> books = bookRepositoryFetchModeJoin.findAll();
+	}
+	
+}

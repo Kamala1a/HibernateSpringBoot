@@ -1,0 +1,6 @@
+package com.jpa.service;
+
+@Service
+public class BookStoreService {
+
+}

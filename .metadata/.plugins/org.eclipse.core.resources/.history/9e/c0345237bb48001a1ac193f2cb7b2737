@@ -1,0 +1,13 @@
+package threading;
+
+public class IsAliveExample extends Thread{
+
+	public void run() {
+		try {
+			
+		} catch(InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+}

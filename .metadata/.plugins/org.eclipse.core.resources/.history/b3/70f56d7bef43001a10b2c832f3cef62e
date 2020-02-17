@@ -1,0 +1,7 @@
+package threading;
+
+public class TestSleepMethod1 extends Thread{
+
+	
+	
+}

@@ -1,0 +1,30 @@
+package com.jpa.service;
+
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.jpa.entity.Author1;
+import com.jpa.repository.Author1Repository;
+
+@Service
+public class Bookstore1service {
+
+	private final Author1Repository author1Repository;
+	
+	public Bookstore1service(Author1Repository author1Repository) {
+		this.author1Repository = author1Repository;
+	}
+	
+	
+	public void insertAuthor() {
+		Author1 author = new Author1();
+		author.setId(UUID.randomUUID());
+		author.setName("Kamala Samraj");
+		author.setGenre("Computers");
+		author.setAge(30);
+		
+		author1Repository.save(author);
+	}
+	
+}

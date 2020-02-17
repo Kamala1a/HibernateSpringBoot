@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;streamExample.SerializationExample&apos; to &apos;SerializationTest&apos;&#x0D;&#x0A;- Original project: &apos;CollectionsPractice&apos;&#x0D;&#x0A;- Original element: &apos;streamExample.SerializationExample&apos;&#x0D;&#x0A;- Renamed element: &apos;streamExample.SerializationTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;SerializationExample&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;streamExample{SerializationExample.java[SerializationExample" matchStrategy="1" name="SerializationTest" qualified="false" references="true" similarDeclarations="false" stamp="1580903573884" textual="false" version="1.0"/>
+</session>

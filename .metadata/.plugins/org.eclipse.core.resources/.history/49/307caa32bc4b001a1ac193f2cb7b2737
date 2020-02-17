@@ -1,0 +1,13 @@
+package javascript;
+
+public class RunScript {
+	
+	public static void main(String args[]) {
+	
+		if(args.length != 1) {
+			
+		}
+		
+	}
+	
+}

@@ -1,0 +1,12 @@
+package com.jpa.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class BookStoreController {
+
+	@RequestMapping("/")
+	public String rowNum1() {
+		
+	}
+}

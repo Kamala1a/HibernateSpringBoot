@@ -1,0 +1,30 @@
+package com.jpa.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.jpa.entity.Author;
+import com.jpa.repository.AuthorRepository;
+
+@Service
+public class BookStoreService {
+
+	@Value("${spring.jpa.properties.hibernate.jdbc.batch_size}")
+	private int batchSize;
+	
+	@Autowired
+	private AuthorRepository authorRepository;
+	
+	public void batchAuthors() {
+		List<Author> authors = new ArrayList<>();
+		for(int i = 0; i < 1000; i++) {
+			Author author = new Author();
+			
+		}
+	}
+	
+}

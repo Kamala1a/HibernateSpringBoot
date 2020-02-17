@@ -1,0 +1,5 @@
+package com.jpa.dao;
+
+public class Dao implements GenericDao<T, ID>{
+
+}

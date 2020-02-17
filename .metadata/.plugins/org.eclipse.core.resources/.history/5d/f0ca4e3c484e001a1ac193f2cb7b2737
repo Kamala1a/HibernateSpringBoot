@@ -1,0 +1,24 @@
+package com.jpa.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jpa.dao.Dao;
+import com.jpa.entity.Author;
+
+@Service
+public class BookStoreService {
+
+	@Autowired
+	private Dao dao;
+	
+	public void batchAuthors() {
+		List<Author> authors = new ArrayList<Author>();
+		
+		authors.add(author)
+	}
+	
+}

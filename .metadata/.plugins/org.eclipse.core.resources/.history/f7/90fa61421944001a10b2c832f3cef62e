@@ -1,0 +1,7 @@
+package com.jpa.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Author1Repository extends JpaRepository<T, ID> { 
+
+}

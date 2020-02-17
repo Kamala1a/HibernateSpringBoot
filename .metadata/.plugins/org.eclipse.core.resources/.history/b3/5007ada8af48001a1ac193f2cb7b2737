@@ -1,0 +1,12 @@
+package threading;
+
+public class JavaSetPriorityExample extends Thread{
+
+	public void run() {
+		System.out.println(Thread.currentThread().getPriority());
+	}
+	
+	public static void main(String args[]) {
+		
+	}
+}

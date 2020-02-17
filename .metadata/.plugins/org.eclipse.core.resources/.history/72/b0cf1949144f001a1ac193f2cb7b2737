@@ -1,0 +1,5 @@
+package com.jpa.n1.repository;
+
+public interface BookRepositoryJoinFetch {
+
+}

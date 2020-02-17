@@ -1,0 +1,19 @@
+package com.jpa.repository.impl;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional(readOnly = true)
+public abstract class SlicePagingRepositoryImplementation<T> {
+
+	private static final String NULL_ENTITY = "Entity Cannot be null";
+	private static final String NULL_PAGEABLE = "Entity Cannot be null";
+	
+	@Autowired
+	private EntityManager entityManager;
+	
+}

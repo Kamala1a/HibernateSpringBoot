@@ -1,0 +1,9 @@
+package com.jpa.dto;
+
+public class AuthorDto {
+
+	public String name;
+	
+	public byte[] avatar;
+	
+}

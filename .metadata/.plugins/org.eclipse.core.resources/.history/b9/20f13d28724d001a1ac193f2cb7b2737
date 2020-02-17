@@ -1,0 +1,43 @@
+package com.jpa.repository;
+
+import java.util.Map;
+import java.util.Objects;
+
+import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional(readOnly = true)
+public class SlicePagingRepositoryImplementation<T> {
+
+	private final String NULL_ENTITY = "Entity Cannot be NULL";
+	private final String NULL_PAGEABLE = "Pageable cannot be null";
+    private final String NULL_SPECIFICATION = "Specification cannot be null";
+    private final String NULL_LOCK_MODE = "Lock mode cannot be null";
+    private final String NULL_QUERY_HINTS = "Query hints cannot be null";
+    private final String NULL_QUERY = "CriteriaQuery cannot be null";
+    
+    @Autowired
+    private EntityManager entityManager;
+	
+    private final Class<T> entityClass;
+    
+    public SlicePagingRepositoryImplementation(final Class<T> entityClass) {
+    	 Objects.requireNonNull(entityClass, NULL_ENTITY);
+    	this.entityClass = entityClass;
+    }
+    
+    public Slice<T> findAll(Specification<T> spec, Pageable pageable, 
+    			Class<T> entityClass, LockModeType lmt, Map<String, Object> hits) {
+    	
+    	
+    	
+    }
+}

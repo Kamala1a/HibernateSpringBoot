@@ -1,0 +1,11 @@
+package threading;
+
+public class ExtendingThread1 extends Thread{
+
+	public void run() {
+		System.out.println("Its Running....");
+	}
+	
+	
+	
+}

@@ -1,0 +1,14 @@
+package streamExample;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+public class StreamExample1 {
+	public static void main(String args[]) {
+		List<String> nameList = Arrays.asList("Kamala","Mahes","Uma","Malar","Christina","Karunya");
+		Stream<String> stream = nameList.stream();
+		stream.forEach(System.out::println);
+		stream.forEach(System.out::println); //Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+	}
+}

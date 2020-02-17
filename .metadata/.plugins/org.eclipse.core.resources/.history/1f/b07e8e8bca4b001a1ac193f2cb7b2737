@@ -1,0 +1,39 @@
+package com.example.demo.repository.impl;
+
+
+import java.awt.print.Pageable;
+import java.util.Objects;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+
+@Repository
+@Transactional(readOnly = true)
+public class SlicePagingRepositoryImplementation<T> {
+
+	private static final String NULL_ENTITY = "Entity Cannot be NULL";
+	private static final String NULL_PAGEABLE = "Entity Cannot be NULL";
+	
+	@Autowired
+	private EntityManager entityManager;
+	
+	private final Class<T> entityClass;
+	
+	public SlicePagingRepositoryImplementation(final Class<T> entityClass) {
+		Objects.requireNonNull(entityClass ,  NULL_ENTITY);
+		this.entityClass = entityClass;
+	}
+	
+	//A slice of data that indicates whether there's a next or previous slice available. 
+	//Allows to obtain a Pageable to request a previous or next Slice.
+	public Slice<T> findAll(Pageable pageable) {
+		Objects.requireNonNull(pageable, NULL_PAGEABLE);
+		return findAll(pageable, entityClass);
+	}
+	
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="threading.ExtendingThread"/>
+<fullyQualifiedTypeName name="java.util.concurrent.RecursiveTask"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="threading.ThreadTwice"/>
+<fullyQualifiedTypeName name="java.lang.IllegalThreadStateException"/>
+<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="javax.persistence.Entity"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="javax.persistence.Id"/>
+<fullyQualifiedTypeName name="javax.persistence.Column"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="com.jpa.repository.AuthorRepository"/>
+<fullyQualifiedTypeName name="com.jpa.repository.Author1Repository"/>
+<fullyQualifiedTypeName name="com.jpa.entity.Author"/>
+<fullyQualifiedTypeName name="java.util.UUID"/>
+<fullyQualifiedTypeName name="com.jpa.service.BookStoreService"/>
+<fullyQualifiedTypeName name="com.jpa.service.Bookstore1service"/>
+<fullyQualifiedTypeName name="com.jpa.entity.Author1"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
+</qualifiedTypeNameHistroy>

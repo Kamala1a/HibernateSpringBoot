@@ -1,0 +1,12 @@
+package threading;
+
+public class ImplementingRunnable1 implements Runnable{
+
+	@Override
+	public void run() {
+		System.out.println("Running");
+	}
+	
+	
+
+}

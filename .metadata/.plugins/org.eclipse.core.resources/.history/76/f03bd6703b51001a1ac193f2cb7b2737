@@ -1,0 +1,9 @@
+package com.jpa.dto;
+
+import java.io.Serializable;
+
+public class AuthorDto implements Serializable{
+
+	
+	
+}

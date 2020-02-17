@@ -1,0 +1,15 @@
+package threading;
+
+public class JavaSetPriorityExample extends Thread{
+
+	public void run() {
+		System.out.println(Thread.currentThread().getPriority());
+	}
+	
+	public static void main(String args[]) {
+		JavaSetPriorityExample t1 = new JavaSetPriorityExample();
+		t1.setPriority(Thread.MAX_PRIORITY);
+		t1.start();
+	}
+	
+}

@@ -1,0 +1,10 @@
+package spilteratorExample;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class InterfaceSpliterator2 {
+	public static void main(String args[]) {
+		List<String> fruitList = Arrays.asList("Mango","Banana","Apple");
+	}
+}

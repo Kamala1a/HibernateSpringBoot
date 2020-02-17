@@ -1,0 +1,6 @@
+package com.jpa;
+
+@Entity
+public class Author1 {
+
+}

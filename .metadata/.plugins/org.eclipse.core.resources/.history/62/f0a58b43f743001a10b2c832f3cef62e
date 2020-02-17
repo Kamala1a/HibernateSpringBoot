@@ -1,0 +1,24 @@
+package threading;
+
+public class ThreadJoinExample2 {
+
+	public void run() {
+		for(int i = 1; i <= 5; i++) {
+			try {
+				Thread.sleep(500);
+			} catch(Exception ex) {
+				System.out.println(ex);
+			}
+			System.out.println(i);
+		}
+	}
+	
+	public static void main(String args[]) {
+		ThreadJoinExample2 t1 = new ThreadJoinExample2();
+		ThreadJoinExample2 t2 = new ThreadJoinExample2();
+		ThreadJoinExample2 t3 = new ThreadJoinExample2();
+		
+		
+	}
+	
+}

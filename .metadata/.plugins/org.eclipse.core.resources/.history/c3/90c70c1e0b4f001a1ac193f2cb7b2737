@@ -1,0 +1,10 @@
+package com.jpa.n1.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Author implements Serializable{
+
+}

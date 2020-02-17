@@ -1,0 +1,16 @@
+package com.jpa.n1.specs;
+
+import org.springframework.data.jpa.domain.Specification;
+
+import com.jpa.n1.entity.Book;
+
+public class BookSpecs {
+
+	private static final int PRICE = 35;
+	
+	public static Specification<Book> isPriceGt35() {
+		return ;
+		
+	}
+	
+}

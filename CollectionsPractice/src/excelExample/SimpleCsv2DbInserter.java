@@ -1,0 +1,89 @@
+package excelExample;
+
+import java.sql.*;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+
+public class SimpleCsv2DbInserter {
+	
+	public static void main(String args[]) {
+		
+		String jdbcURL = "jdbc:mysql://localhost:3306/testdb";
+		String username = "root";
+		String password = "root";
+		
+		String csvFilePath = "D:/Example.csv";
+		int batchSize = 20;
+		
+		Connection connection = null;
+		
+		try {
+			
+			connection = DriverManager.getConnection(jdbcURL, username, password);
+			connection.setAutoCommit(false);
+			
+			String sql = "INSERT INTO review(course_name, student_name, timestamp, rating, comment) VALUES (?, ?, ?, ?, ?)";
+			PreparedStatement statement = connection.prepareStatement(sql);
+			
+			//BufferedReader lineReader = new BufferedReader(new FileReader(csvFilePath));
+			BufferedReader lineReader = new BufferedReader(new InputStreamReader(new FileInputStream(csvFilePath), "Shift_JIS"));
+
+			String lineText = null;
+			
+			int count = 0;
+			
+			lineReader.readLine();
+			
+			 while ((lineText = lineReader.readLine()) != null) {
+				
+				String[] data = lineText.split(",");
+				String courseName = data[0];
+				String studentName = data[1];
+				String timeStamp = data[2];
+				String rating = data[3];
+				String comment = data.length == 5 ? data[4] : "";
+				
+				statement.setString(1, courseName);
+				statement.setString(2, studentName);
+				
+				Timestamp sqlTimeStamp = Timestamp.valueOf(timeStamp);
+				statement.setTimestamp(3, sqlTimeStamp);
+				
+				Float fRating = Float.parseFloat(rating);
+				statement.setFloat(4, fRating);
+				statement.setString(5, comment);
+				
+				statement.addBatch();
+				
+				if(count % batchSize == 0) {
+					statement.executeBatch();
+				}
+				
+			}
+			
+			lineReader.close();
+			
+			statement.executeBatch();
+			
+			connection.commit();
+			connection.close();
+			 
+		} catch(IOException ex) {
+			
+			System.err.println(ex);
+			
+		} catch(SQLException ex) {
+			
+			System.err.println(ex);
+			
+			try {
+				connection.rollback();
+			}catch(SQLException e) {
+				System.err.println(e);
+			}
+			
+		}
+		
+	}
+	
+}

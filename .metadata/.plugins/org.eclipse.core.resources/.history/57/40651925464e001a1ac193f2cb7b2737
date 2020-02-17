@@ -1,0 +1,17 @@
+package com.jpa.dao;
+
+import java.io.Serializable;
+
+import org.springframework.beans.factory.annotation.Value;
+
+public class Dao<T, ID extends Serializable> implements GenericDao<T, ID>{
+
+	@Value
+	private int batchSize;
+	
+	@Override
+	public <R extends T> void saveInBatch(Iterable<R> entities) {
+		
+	}
+
+}

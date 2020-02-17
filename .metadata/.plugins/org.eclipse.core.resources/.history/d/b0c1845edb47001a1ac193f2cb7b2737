@@ -1,0 +1,49 @@
+package streamExample;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StreamPerformance1 {
+	
+	static List<Integer> myList = new ArrayList<Integer>();
+	
+	public static void main(String args[]) {
+		
+		for(int i = 0; i < 5000000; i++) {
+			myList.add(i);
+		}
+		
+		int resultLoop = 0;
+		long loopStartTime = System.currentTimeMillis();
+		
+		for(int i: myList) {
+			if(i % 2 == 0) {
+				resultLoop += i;
+			}
+		}
+		
+		long loopEndTime = System.currentTimeMillis();
+		
+		System.out.println("For Loop Total Time: " + (loopEndTime - loopStartTime));
+		
+		long streamStartTime = System.currentTimeMillis();
+		
+		int resultStream = myList.stream().filter(value -> value % 2 == 0).mapToInt(Integer::intValue).sum();
+		
+		long streamEndTime = System.currentTimeMillis();
+		
+		System.out.println("For Stream Total Time: " + (streamEndTime - streamStartTime));
+		
+		long parallelStreamStartTime = System.currentTimeMillis();
+		
+		long parallelStreamEndTime = System.currentTimeMillis();
+		
+		int resultParallelStream = myList.parallelStream().filter(value -> value % 2 == 0).mapToInt(Integer::intValue).sum();
+		
+		System.out.println("For ParallelStream Total Time: " + (parallelStreamEndTime - parallelStreamStartTime));
+		
+		System.out.println("resultLoop: " + resultLoop);
+		System.out.println("resultStream: " + resultStream);
+	}
+	
+}

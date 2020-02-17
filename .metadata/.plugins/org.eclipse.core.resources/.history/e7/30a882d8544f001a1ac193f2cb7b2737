@@ -1,0 +1,5 @@
+package com.jpa.n1.specs;
+
+public class BookSpecs {
+
+}

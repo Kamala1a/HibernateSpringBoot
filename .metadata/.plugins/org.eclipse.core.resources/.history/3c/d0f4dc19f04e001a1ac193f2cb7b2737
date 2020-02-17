@@ -1,0 +1,8 @@
+package com.jpa.impl;
+
+import org.springframework.data.repository.NoRepositoryBean;
+
+@NoRepositoryBean
+public class BatchRepository {
+
+}

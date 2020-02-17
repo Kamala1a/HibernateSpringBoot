@@ -1,0 +1,15 @@
+package com.jpa.service;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookStoreService {
+
+	@Value("${spring.jpa.properties.hibernate.jdbc.batch_size}")
+	private int batchSize;
+	
+	@Autowired
+	private AuthorRepository authorRepository;
+	
+}

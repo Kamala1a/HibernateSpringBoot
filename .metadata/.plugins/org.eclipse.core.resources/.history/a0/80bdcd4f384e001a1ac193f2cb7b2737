@@ -1,0 +1,18 @@
+package com.jpa.dao;
+
+import java.io.Serializable;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Repository
+@Transactional
+public class Dao<T, ID extends Serializable> implements GenericDao<T, ID> {
+
+	@Override
+	public <S extends T> void saveInBatch(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

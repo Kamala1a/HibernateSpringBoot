@@ -1,0 +1,12 @@
+package com.jpa.service;
+
+import com.jpa.entity.Author;
+import com.jpa.repository.impl.AuthorRepository;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookStoreService {
+
+}

@@ -1,0 +1,8 @@
+package com.jpa.repository;
+
+import com.jpa.repository.impl.SlicePagingRepositoryImplementation;
+
+@Repository
+public class AuthorRepository extends SlicePagingRepositoryImplementation<Author>{
+
+}

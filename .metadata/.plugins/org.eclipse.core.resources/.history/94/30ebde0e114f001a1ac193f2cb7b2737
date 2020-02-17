@@ -1,0 +1,14 @@
+package com.jpa.n1.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jpa.n1.repository.BookRepositoryFetchModeJoin;
+
+@Service
+public class BookstoreService {
+
+	@Autowired
+	BookRepositoryFetchModeJoin bookRepositoryFetchModeJoin;
+	
+}

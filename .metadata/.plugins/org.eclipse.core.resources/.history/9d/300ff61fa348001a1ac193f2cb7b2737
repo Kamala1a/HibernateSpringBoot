@@ -1,0 +1,14 @@
+package threading;
+
+public class ImplementThreadWithRunnableRUN implements Runnable{
+
+	@Override
+	public void run() {
+		
+	}
+	
+	public static void main(String args[]) {
+		ImplementThreadWithRunnableRUN i1 = 
+	}
+
+}

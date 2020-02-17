@@ -1,0 +1,89 @@
+package com.jpa;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Author1 implements Serializable{
+
+	@Id
+	private static final long serialVersionUID = 1L;
+	
+	private String name;
+	
+	private String genre;
+	
+	private int age;
+	
+	@OneToMany(cascade = CascadeType.ALL,
+			mappedBy = "author", orphanRemoval = true)
+	private List<Book1> books = new ArrayList<Book1>();
+	
+	
+	public void addBook(Book1 book) {
+		this.books.add(book);
+		book.setAuthor(this);
+	}
+
+	public void removeBook(Book1 book) {
+		book.setAuthor(null);
+		this.books.remove(book);
+	}
+	
+	public void removeBooks() {
+		Iterator<Book1> iterator = this.books.iterator();
+		
+		while(iterator.hasNext()) {
+			Book1 book = iterator.next();
+			book.setAuthor(null);
+			iterator.remove();
+		}
+	}
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getGenre() {
+		return genre;
+	}
+
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+
+	public List<Book1> getBooks() {
+		return books;
+	}
+
+
+	public void setBooks(List<Book1> books) {
+		this.books = books;
+	}
+
+}

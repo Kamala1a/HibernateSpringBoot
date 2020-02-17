@@ -1,0 +1,14 @@
+package com.example.demo.repository.impl;
+
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+
+@Repository
+@Transactional(readOnly = true)
+public class SlicePagingRepositoryImplementation<T> {
+
+	private static final String NULL_ENTITY = "Entity Cannot be NULL";
+	
+}

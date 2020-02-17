@@ -1,0 +1,23 @@
+package javascript;
+
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+import static java.lang.System.*;
+
+
+public class RunScript {
+	
+	public static void main(String args[]) {
+	
+		if(args.length != 1) {
+			
+		}
+		
+	}
+	
+}

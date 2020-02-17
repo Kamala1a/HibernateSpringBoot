@@ -1,0 +1,11 @@
+package com.jpa;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Author1 {
+
+	private static final long serialVersionUID = 1L;
+	
+	
+}

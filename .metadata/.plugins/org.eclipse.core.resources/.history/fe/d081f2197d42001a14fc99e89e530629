@@ -1,0 +1,14 @@
+package com.jpa.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class BookStoreController {
+
+	@RequestMapping("/home")
+	public String rowNum1(Model model) {
+		return "rowNum1";
+	}
+}

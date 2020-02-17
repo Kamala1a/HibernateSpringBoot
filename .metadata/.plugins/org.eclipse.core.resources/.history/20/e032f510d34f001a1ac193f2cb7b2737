@@ -1,0 +1,28 @@
+package com.jpa.n1.specs;
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.Root;
+import javax.persistence.criteria.CriteriaQuery;
+
+import org.springframework.data.jpa.domain.Specification;
+
+import com.jpa.n1.entity.Book;
+
+public class BookSpecs {
+
+	private static final int PRICE = 35;
+	
+	public static Specification<Book> isPriceGt35() {
+		
+		Specification spec;
+		CriteriaBuilder cBuilder;
+		CriteriaQuery<?> cQuery;
+		Root<Book> cRoot;
+		spec.toPredicate(, cQuery, cBuilder);
+		return (Root<Book> root,
+				CriteriaQuery<?> query, CriteriaBuilder builder) ->
+		builder.greaterThan(root.get("price"), PRICE);
+		
+	}
+	
+}

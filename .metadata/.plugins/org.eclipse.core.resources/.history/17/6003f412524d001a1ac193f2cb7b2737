@@ -1,0 +1,36 @@
+package com.jpa.repository.impl;
+
+import java.io.Serializable;
+import java.util.Objects;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public abstract class SlicePagingRepositoryImplementation<T> {
+
+	private static final String NULL_ENTITY = "Entity Cannot be NULL";
+	
+	@Autowired
+	private EntityManager entityManager;
+	
+	private final Class<T> entityClass;
+	
+	protected SlicePagingRepositoryImplementation(Class<T> entityClass) {
+		Objects.requireNonNull(entityClass, NULL_ENTITY);
+		this.entityClass = entityClass;
+	}
+	
+	
+	public static class SimpleSliceJpaRepository<T, ID extends Serializable> 
+					extends SimpleJpaRepository<T, ID> {
+
+		public SimpleSliceJpaRepository(Class<T> entityClass, EntityManager entityManager) {
+			super(domainClass, em);
+		}
+		
+	}
+}

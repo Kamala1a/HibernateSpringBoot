@@ -1,0 +1,11 @@
+package com.jpa.repository;
+
+import javax.transaction.Transactional;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+@Transactional(readOnly = true)
+public abstract class SlicePagingRepositoryImplementation<T> {
+
+}

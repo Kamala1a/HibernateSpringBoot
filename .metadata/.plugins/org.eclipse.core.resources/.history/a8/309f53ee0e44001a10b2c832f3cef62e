@@ -1,0 +1,20 @@
+package examples;
+
+public class Example1 {
+	public static void main(String args[]) {
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				System.out.println("Hi Kamala with out lambda");
+			}
+			
+		}).start();
+		
+		new Thread(
+				() -> {
+					System.out.println("Hi Kamala with lambda");
+				}
+				)
+	}
+}

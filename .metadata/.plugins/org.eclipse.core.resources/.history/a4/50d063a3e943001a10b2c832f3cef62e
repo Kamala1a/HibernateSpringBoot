@@ -1,0 +1,29 @@
+package threading;
+
+import java.util.concurrent.ForkJoinPool;  
+import java.util.concurrent.RecursiveTask;  
+import java.util.concurrent.TimeUnit; 
+
+public class JavaForkJoinPoolawaitQuiescenceExample1 {
+	
+	public static void main(String args[]) throws InterruptedException {
+	
+		int proc = Runtime.getRuntime().availableProcessors();
+		System.out.println("Number of Core available in your processor: " + proc);
+		
+		int[] n = {20, 23, 5, 6, 7, 8, 23, 12, 56, 1};
+		ForkJoinPool pool = new ForkJoinPool(proc);
+		
+	}
+	
+}
+
+class Test extends RecursiveTask<Integer> {
+
+	@Override
+	protected Integer compute() {
+		// TODO Auto-geneated method stub
+		return null;
+	}
+	
+}

@@ -1,0 +1,22 @@
+package com.example.demo.service;
+
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.repository.AuthorRepository;
+
+@Service
+public class BookStoreService {
+
+	private final AuthorRepository authorRepository;
+	
+	public BookStoreService(AuthorRepository authorRepository) {
+		this.authorRepository = authorRepository;
+	}
+	
+	public Slice<Author> fetchNextSlice(int page, int size) {
+		return authorRepository.findAll(PageRequest.of(page, size));
+	}
+	
+}

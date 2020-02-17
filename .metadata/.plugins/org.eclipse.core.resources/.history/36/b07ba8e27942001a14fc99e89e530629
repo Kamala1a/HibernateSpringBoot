@@ -1,0 +1,11 @@
+package com.jpa;
+
+import com.bookstore.dto.AuthorDto;
+import com.bookstore.repository.AuthorRepository;
+import java.util.List;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookStoreService {
+
+}

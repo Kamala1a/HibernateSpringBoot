@@ -1,0 +1,19 @@
+package com.jpa.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Slice;
+import org.springframework.stereotype.Service;
+
+import com.jpa.repository.impl.AuthorRepository;
+
+@Service
+public class BookstoreService {
+
+	@Autowired
+	private AuthorRepository authorRepository;
+	
+	public Slice<Author> fetchNextSlice(int page, int size) {
+		return authorRepository.findAll(isAgeGt45(), pageable, entityClass)
+	}
+	
+}

@@ -1,0 +1,10 @@
+package ArrayListExamples;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AccessElementsFromArrayListExample {
+	public static void main(String args[]) {
+		List<String> topProgrammingLanguages = new ArrayList<>();
+	}
+}

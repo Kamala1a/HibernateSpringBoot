@@ -1,0 +1,21 @@
+package com.example.demo.controller;
+
+import org.springframework.data.domain.Slice;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.service.BookStoreService;
+
+@RestController
+public class BookStoreController {
+
+	private final BookStoreService bookStoreService;
+
+	public BookStoreController(BookStoreService bookStoreService) {
+		this.bookStoreService = bookStoreService;
+	}
+	
+	public Slice<Author> fetchAuthors(@PathVariable int page, @PathVariale int size) {
+		return bookStoreService.fetchNextSlice(page, size)
+	}
+}

@@ -1,0 +1,9 @@
+package com.jpa.service;
+
+public class AuthorSpecs {
+
+	private static final int AGE = 45;
+	
+	
+	
+}

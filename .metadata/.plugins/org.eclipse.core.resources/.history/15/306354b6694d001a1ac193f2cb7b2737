@@ -1,0 +1,12 @@
+package com.jpa.repository.impl;
+
+import com.jpa.entity.Author;
+
+public class AuthorRepository extends SlicePagingRepositoryImplementation<Author>{
+
+	public AuthorRepository() {
+		super(entityClass);
+		// TODO Auto-generated constructor stub
+	}
+
+}

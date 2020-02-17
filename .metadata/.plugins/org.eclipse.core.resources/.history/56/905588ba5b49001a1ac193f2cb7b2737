@@ -1,0 +1,12 @@
+package excelExample;
+
+public class SimpleCsv2DbInserter {
+	
+	public static void main(String args[]) {
+		
+		String jdbcURL = "jdbc:mysql://localhost:3306/testdb";
+		
+		
+	}
+	
+}

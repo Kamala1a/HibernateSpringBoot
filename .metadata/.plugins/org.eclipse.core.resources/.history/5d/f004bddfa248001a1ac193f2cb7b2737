@@ -1,0 +1,9 @@
+package threading;
+
+public class ExtendThreadWithRun extends Thread{
+
+	public void run() {
+		System.out.println("Running....");
+	}
+	
+}
